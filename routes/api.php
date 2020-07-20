@@ -14,6 +14,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::middleware('auth:api')->get('/user', function (Request $request) {
-    return $request->user();
+
+
+Route::middleware('api_auth')->group(function(){
+    Route::get('/movies','Api\MovieController@index');
+    Route::get('/movies/best','Api\MovieController@best');
+    Route::get('/movies/{movie}','Api\MovieController@show');
 });
