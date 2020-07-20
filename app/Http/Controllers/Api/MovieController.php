@@ -37,6 +37,7 @@ class MovieController extends Controller
             return response()->json([
                 'success' => false,
                 'error'=> 'Film non trovato!',
+                'data'=> [],
             ]);
         }
         

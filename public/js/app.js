@@ -37276,6 +37276,20 @@ module.exports = function(module) {
 
 __webpack_require__(/*! ./bootstrap */ "./resources/js/bootstrap.js");
 
+var $ = __webpack_require__(/*! jquery */ "./node_modules/jquery/dist/jquery.js");
+
+$.ajax({
+  'url': 'http://127.0.0.1:8000/api/movies',
+  'method': 'GET',
+  'success': function success(data) {
+    console.log(data);
+    $('.risultati').html(data);
+  },
+  'error': function error() {
+    alert('errore');
+  }
+});
+
 /***/ }),
 
 /***/ "./resources/js/bootstrap.js":

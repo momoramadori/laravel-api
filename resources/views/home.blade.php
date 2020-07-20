@@ -1,4 +1,7 @@
 @extends('layouts.app')
+@section('javascript-link')
+    <script src="{{asset('js/app.js')}}"></script>
+@endsection
 
 @section('content')
 <div class="container">
@@ -17,6 +20,9 @@
                     {{ __('You are logged in!') }}
                 </div>
             </div>
+        </div>
+        <div class="risultati col-12">
+
         </div>
     </div>
 </div>
