@@ -22,4 +22,5 @@ Auth::routes();
 
 Route::get('/admin', 'HomeController@index')->name('home');
 Route::get('/admin/account','HomeController@account')->name('admin.account');
+Route::post('/admin/generate-token', 'HomeController@generateToken')->name('admin.generate_token');
 

@@ -3,6 +3,8 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Support\Str;
+use Illuminate\Support\Facades\Auth;
 
 class HomeController extends Controller
 {
@@ -28,5 +30,13 @@ class HomeController extends Controller
 
     public function account(){
         return view('user');
+    }
+
+    public function generateToken() {
+        $random_token = Str::random(80);
+        $utente_corrente = Auth::user();
+        $utente_corrente->api_token = $random_token;
+        $utente_corrente->save();
+        return redirect()->route('admin.account');
     }
 }
